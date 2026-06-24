@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounak Edits | Premium Video Portfolio</title>
+    
+    <!-- Premium Cinematic Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PREMIUM GOLDEN FILM THEME --- */
+        :root {
+            --gold-light: #FFDF73;
+            --gold-primary: #D4AF37;
+            --gold-dark: #998100;
+            --text-glow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.3);
+            --glass-bg: rgba(15, 15, 15, 0.65);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Hide default cursor for magical effect */
+            cursor: none !important; 
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #030303;
+            color: white;
+            
+            /* Premium Cinematic Film & Editing Timeline Background */
+            background-image: 
+                /* Subtle Editing Grid Lines */
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                /* Dark Vignette Overlay */
+                radial-gradient(circle at center, rgba(15, 15, 15, 0.85) 0%, rgba(2, 2, 2, 1) 100%),
+                /* Raw Cinematic Texture */
+                url('https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1920&q=80');
+            background-size: 60px 60px, 60px 60px, cover, cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Film Grain */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.06;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+        }
+
+        /* --- MAGICAL MOUSE CURSOR --- */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold-light);
+            box-shadow: 0 0 15px var(--gold-light), 0 0 30px var(--gold-primary);
+            border-radius: 50%;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        .cursor-trail {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold-primary);
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            pointer-events: none;
+            transition: width 0.2s, height 0.2s;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+        }
+        .logo {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 28px;
+            font-weight: 900;
+            text-shadow: var(--text-glow);
+            letter-spacing: 2px;
+        }
+        .nav-social {
+            color: #e0e0e0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 20px;
+            position: relative;
+        }
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            left: 0; width: 100%; height: 8vh;
+            background: #000;
+            z-index: 10;
+        }
+        .hero::before { top: 0; }
+        .hero::after { bottom: 0; }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 5.5rem;
+            color: var(--gold-light);
+            text-shadow: var(--text-glow);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            z-index: 20;
+        }
+        .hero p {
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            letter-spacing: 3px;
+            line-height: 1.8;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(0,0,0,1);
+            z-index: 20;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 40px;
+            border-radius: 3px; 
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.4s;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            z-index: 20;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--gold-light);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+
+        /* --- GENERAL SECTIONS --- */
+        .section {
+            padding: 120px 8%;
+        }
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 3rem;
+            margin-bottom: 50px;
+            text-align: center;
+            text-shadow: var(--text-glow);
+            letter-spacing: 4px;
+        }
+
+        /* --- APPLE GLASS ABOUT SECTION --- */
+        .glass {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px; 
+            padding: 50px;
+            box-shadow: var(--glass-glow);
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #e8e8e8;
+            font-weight: 300;
+        }
+
+        /* --- CLICKABLE VIDEO PORTFOLIO CARDS --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Card is now a clickable link block */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--glass-glow);
+            position: relative;
+            display: block;
+            text-decoration: none;
+        }
+        .card:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: var(--gold-light);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* New Image Thumbnail CSS */
+        .video-thumbnail {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            display: block;
+            transition: 0.5s;
+        }
+        .card:hover .video-thumbnail {
+            filter: brightness(1.2) contrast(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            font-size: 1.3rem;
+            text-shadow: var(--text-glow);
+        }
+
+        /* --- CONTACT BANNERS --- */
+        .contact-section {
+            padding: 60px 8% 120px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .banner-btn {
+            background: var(--glass-bg);
+            backdrop-filter: blur(40px);
+            border: 1px solid var(--glass-border);
+            padding: 30px 50px; 
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: var(--glass-glow);
+            
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-shadow: var(--text-glow);
+        }
+        .banner-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.6);
+            border-color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* Surprise Animation on Click */
+        .surprise-click {
+            animation: cinematic-pop 0.7s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+        }
+        @keyframes cinematic-pop {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+            40% { transform: scale(1.15) rotate(2deg); box-shadow: 0 0 80px rgba(212, 175, 55, 1); background: rgba(212, 175, 55, 0.5); color: #fff;}
+            70% { transform: scale(0.95) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); }
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(0,0,0,0.95);
+            color: #777;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MAGICAL CURSOR ELEMENTS -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
+
+    <nav>
+        <div class="logo">ROUNAK EDITS</div>
+        <div class="nav-social">@rounak_editzz</div>
+    </nav>
+
+    <section class="hero">
+        <h1>Rounak Edits</h1>
+        <p>Premium Cinematic Editing • Commercials • Motion Graphics</p>
+        <a class="btn" href="#portfolio">Enter Archive</a>
+    </section>
+
+    <section class="section">
+        <h2>The Editor</h2>
+        <div class="glass">
+            <p>
+                Hi, I'm Rounak. I help creators and brands turn raw footage into cinematic stories. 
+                I specialize in high-retention editing, deep color grading, and dynamic visuals that leave a lasting impression. Let's create something extraordinary.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <h2>Portfolio Showcase</h2>
+        <div class="grid">
+            
+            <!-- Video 1 -->
+            <a href="https://youtube.com/shorts/36PXuJgqUxU?si=S37rSiNGasf9jJej" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 1</h3>
+                </div>
+            </a>
+
+            <!-- Video 2 -->
+            <a href="https://youtu.be/A-pzgnHXItc?si=QR8WzK4oGy0ON8-2" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 2</h3>
+                </div>
+            </a>
+
+            <!-- Video 3 -->
+            <a href="https://youtu.be/b3joSJ1dLM4?si=YE7EVdyFVKUmVz6w" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 3</h3>
+                </div>
+            </a>
+
+            <!-- Video 4 -->
+            <a href="https://youtu.be/RbE5G1xBftM?si=xFNzM8SmsoyY6gle" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 4</h3>
+                </div>
+            </a>
+
+            <!-- Video 5 -->
+            <a href="https://youtube.com/shorts/d-2j9AKholk?si=M2irWvjrpY32JeYo" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 5</h3>
+                </div>
+            </a>
+
+            <!-- Video 6 -->
+            <a href="https://youtube.com/shorts/ETCNAd5xMDk?si=Q4Zi1PAhhaaDwG6n" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 6</h3>
+                </div>
+            </a>
+
+            <!-- Video 7 -->
+            <a href="https://youtube.com/shorts/CIi-PSvK_-8?si=R3lgB9BG9OS4MiqL" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 7</h3>
+                </div>
+            </a>
+
+            <!-- Video 8 -->
+            <a href="https://youtube.com/shorts/58Lg0gABWl8?si=U1iGBFPdP_6j7-GT" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 8</h3>
+                </div>
+            </a>
+
+            <!-- Video 9 -->
+            <a href="https://youtube.com/shorts/8hwPZkIrhVc?si=-C_yNyixVZApigiX" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 9</h3>
+                </div>
+            </a>
+
+            <!-- Video 10 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="card-content">
+                    <h3>Project Title 10</h3>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- BANNERS FOR EMAIL, INSTAGRAM, AND YOUTUBE -->
+    <section class="contact-section">
+        <a href="mailto:rounakeditzz@gmail.com" class="banner-btn" onclick="triggerSurprise(event, this)">
+            ✉️ EMAIL ME
+        </a>
+        
+        <a href="YOUR_INSTAGRAM_LINK_HERE" target="_blank" class="banner-btn" onclick="triggerSurprise(event, this)">
+            📸 INSTAGRAM
+        </a>
+
+        <a href="YOUR_YOUTUBE_CHANNEL_LINK_HERE" target="_blank" class="banner-btn" onclick="triggerSurprise(event, this)">
+            🎥 YOUTUBE
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Rounak Edits. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SURPRISE ANIMATION & CURSOR SCRIPT -->
+    <script>
+        // Magic Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorTrail = document.querySelector('.cursor-trail');
+
+        window.addEventListener('mousemove', function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Instant dot movement
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Trailing effect for the ring
+            cursorTrail.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 600, fill: "forwards" });
+        });
+
+        // Hover effect to enlarge the cursor on links/buttons
+        const interactables = document.querySelectorAll('a, .card, .banner-btn');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorTrail.style.width = '60px';
+                cursorTrail.style.height = '60px';
+                cursorTrail.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorTrail.style.width = '40px';
+                cursorTrail.style.height = '40px';
+                cursorTrail.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Surprise Click Logic
+        function triggerSurprise(event, element) {
+            // Only prevent default if it's not a mailto link to ensure mail app opens smoothly
+            if (!element.href.startsWith('mailto:')) {
+                event.preventDefault(); 
+            }
+            
+            element.classList.remove('surprise-click'); // Reset animation
+            void element.offsetWidth; // Trigger reflow
+            element.classList.add('surprise-click'); // Start animation
+            
+            // Wait for the animation to play before jumping to the link
+            if (!element.href.startsWith('mailto:')) {
+                setTimeout(() => {
+                    if (element.target === "_blank") {
+                        window.open(element.href, '_blank');
+                    } else {
+                        window.location.href = element.href;
+                    }
+                }, 700);
+            }
+        }
+    </script>
+</body>
+</html>
